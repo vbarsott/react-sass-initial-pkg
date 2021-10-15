@@ -1,0 +1,19 @@
+@for $i from 1 through 6 {
+  .h#{$i} {
+    font-weight: $font-weight-semi-bold;
+    font-family: $default-font;
+    letter-spacing: 2px;
+    margin-bottom: $base-margin;
+  }
+}
+
+@for $i from 1 through 6 {
+  .fancy-h#{$i} {
+    font-weight: $font-weight-semi-bold;
+    font-family: $style-font;
+    letter-spacing: 2px;
+    margin-bottom: $base-margin;
+    -webkit-text-stroke-width: $base-text-stroke-width;
+    -webkit-text-stroke-color: $base-text-stroke-color;
+  }
+}

@@ -1,0 +1,103 @@
+$theme-type: 'light' 'dark';
+
+$fl-light-colors: (
+  'fl-primary-pink': $fl-primary-pink,
+  'fl-primary-green': $fl-primary-green,
+  'fl-secondary-green': $fl-secondary-green,
+  'fl-almond': $fl-almond,
+  'fl-lightgrey': $fl-lightgrey,
+  'fl-maxyellowred': $fl-maxyellowred,
+);
+
+$fl-dark-colors: (
+  'fl-secondary-pink': $fl-secondary-pink,
+  'fl-tertiary-pink': $fl-tertiary-pink,
+  'fl-tertiary-green': $fl-tertiary-green,
+  'fl-darkslategrey': $fl-darkslategrey,
+  'fl-terra-cotta': $fl-terra-cotta,
+);
+
+@each $property, $map in $theme-type {
+  $prefix: map-get($map, 'prefix');
+  $values: map-get($map, 'values');
+  @each $k, $v in $values {
+    .#{$prefix}-#{$k} {
+      #{$property}: $v;
+    }
+  }
+}
+
+$theme-type: (
+  'theme-light': (
+    'prefix': 'lg',
+    'values': (
+      'fl-primary-pink': $fl-primary-pink,
+      'fl-primary-green': $fl-primary-green,
+      'fl-secondary-green': $fl-secondary-green,
+      'fl-almond': $fl-almond,
+      'fl-lightgrey': $fl-lightgrey,
+      'fl-maxyellowred': $fl-maxyellowred,
+    ),
+  ),
+  'theme-dark': (
+    'prefix': 'dk',
+    'values': (
+      'fl-secondary-pink': $fl-secondary-pink,
+      'fl-tertiary-pink': $fl-tertiary-pink,
+      'fl-tertiary-green': $fl-tertiary-green,
+      'fl-darkslategrey': $fl-darkslategrey,
+      'fl-terra-cotta': $fl-terra-cotta,
+    ),
+  ),
+);
+
+// FLORAL COLOR PALETTE
+$white: white;
+$black: black;
+$grey: grey;
+$alert: rgb(250, 70, 59);
+$pink1: rgb(213, 181, 183);
+$pink2: rgb(117, 84, 87);
+$pink3: rgb(159, 83, 91);
+$green1: rgb(169, 199, 196);
+$green2: rgb(144, 170, 173);
+$green3: rgb(115, 162, 161);
+$almond: rgb(247, 222, 200);
+$lightgrey: rgb(209, 215, 211);
+$slategrey: rgb(42, 86, 83);
+$terracotta: rgb(227, 109, 99);
+$maxyellow: rgb(249, 201, 119);
+
+@each $property, $map in $theme-type {
+  $prefix: map-get($map, 'prefix');
+  $values: map-get($map, 'values');
+  @each $k, $v in $values {
+    @if () .#{$prefix}-#{$k} {
+      #{$property}: $v;
+    }
+  }
+}
+
+@each $property, $map in $theme-type {
+  $prefix: map-get($map, 'prefix');
+  $values: map-get($map, 'values');
+
+  @each $k, $v in $values {
+    .dark-#{$key} {
+      color: $val;
+    }
+    .dark-#{$key} {
+      &:hover {
+        color: lighten($val, 30%);
+      }
+    }
+    .bg-dark-#{$key} {
+      background-color: $val;
+    }
+    .bg-#{$key} {
+      &:hover {
+        background-color: lighten($val, 30%);
+      }
+    }
+  }
+}

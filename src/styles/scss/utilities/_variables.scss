@@ -1,0 +1,39 @@
+// FONT FAMILY
+$default-font: 'Montserrat', sans-serif;
+$style-font: 'Risque', cursive;
+
+// FONT COLOR
+$default-color: steelblue;
+
+// FONT SIZE
+$base-font-size: 1rem;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;
+
+// FONT WEIGHT
+$font-weight-regular: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+// LETTER SPACING
+$base-letter-spacing: 2px;
+
+// SPACING
+$base-padding: 0.5rem;
+$base-margin: 0.5rem;
+
+// BORDERS
+$base-border-thickness: 1px;
+
+// BORDER RADIUS
+$round-border-radius: 50%;
+$base-border-radius: 10px;
+
+// BOX-SHADOW
+$base-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+
+// TEXT STROKE
+$base-text-stroke-width: 1px;
+$base-text-stroke-color: black;

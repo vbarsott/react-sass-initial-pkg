@@ -1,0 +1,86 @@
+// FLORAL COLOR PALETTE
+$white: white;
+$black: black;
+$grey: grey;
+$alert: rgb(250, 70, 59);
+$pink1: rgb(213, 181, 183);
+$pink2: rgb(117, 84, 87);
+$pink3: rgb(159, 83, 91);
+$green1: rgb(169, 199, 196);
+$green2: rgb(144, 170, 173);
+$green3: rgb(115, 162, 161);
+$almond: rgb(247, 222, 200);
+$lightgrey: rgb(209, 215, 211);
+$slategrey: rgb(42, 86, 83);
+$terracotta: rgb(227, 109, 99);
+$maxyellow: rgb(249, 201, 119);
+
+$theme-type: (
+  'light': (
+    'prefix': 'lg',
+    'values': (
+      'white': $white,
+      'pink1': $pink1,
+      'green1': $green1,
+      'green2': $green2,
+      'almond': $almond,
+      'lightgrey': $lightgrey,
+      'maxyellow': $maxyellow,
+    ),
+  ),
+  'dark': (
+    'prefix': 'dk',
+    'values': (
+      'black': $black,
+      'grey': $grey,
+      'pink2': $pink2,
+      'pink3': $pink3,
+      'green3': $green3,
+      'slategrey': $slategrey,
+      'terracotta': $terracotta,
+      'alert': $alert,
+    ),
+  ),
+);
+
+@each $property, $map in $theme-type {
+  $prefix: map-get($map, 'prefix');
+  $values: map-get($map, 'values');
+  @each $k, $v in $values {
+    @if ($prefix == 'lg') {
+      .text-#{$prefix}-#{$k} {
+        color: $v;
+      }
+      .#{$prefix}-#{$k} {
+        &:hover {
+          color: darken($v, 30%);
+        }
+      }
+      .bg-#{$prefix}-#{$k} {
+        background-color: $v;
+      }
+      .bg-#{$prefix}-#{$k} {
+        &:hover {
+          background-color: darken($v, 30%);
+        }
+      }
+    } @else if ($prefix == 'dk') {
+      .text-#{$prefix}-#{$k} {
+        color: $v;
+      }
+      .#{$prefix}-#{$k} {
+        &:hover {
+          color: lighten($v, 30%);
+        }
+      }
+      .bg-#{$prefix}-#{$k} {
+        background-color: $v;
+      }
+      .bg-#{$prefix}-#{$k} {
+        &:hover {
+          background-color: lighten($v, 30%);
+        }
+      }
+    }
+  }
+}
